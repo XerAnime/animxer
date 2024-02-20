@@ -4,12 +4,12 @@ const Footer = () => {
   return (
     <>
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between bg-purple-600 px-2 py-2 text-white md:px-16">
-        © AnimeSensei 2023. No copyrights intended. This is solely for the
+        © AnimXer 2023. No copyrights intended. This is solely for the
         purpose of learning and education. Any exploit of the work is
         prohibited.
       </div>
       <div className="social-card text-primary">
-        <a href="/" className="social-link1">
+        <a href="https://www.instagram.com" className="social-link1">
           <svg
             viewBox="0 0 16 16"
             className="bi bi-instagram"
@@ -25,7 +25,7 @@ const Footer = () => {
             ></path>{" "}
           </svg>
         </a>
-        <a href="/" className="social-link2">
+        <a href="https://www.twitter.com" className="social-link2">
           <svg
             viewBox="0 0 16 16"
             className="bi bi-twitter"
@@ -41,7 +41,7 @@ const Footer = () => {
             ></path>{" "}
           </svg>{" "}
         </a>
-        <a href="/" className="social-link3">
+        <a href="https://www.discord.com" className="social-link3">
           <svg
             viewBox="0 0 16 16"
             className="bi bi-discord"
@@ -57,7 +57,7 @@ const Footer = () => {
             ></path>{" "}
           </svg>
         </a>
-        <a href="/" className="social-link4">
+        <a href="https://www.whstsapp.com" className="social-link4">
           <svg
             viewBox="0 0 16 16"
             className="bi bi-whatsapp"
