@@ -21,7 +21,7 @@ const NavBar = () => {
           href="/"
           className="color-text text-base md:text-2xl font-semibold tracking-wide flex items-center"
         >
-          <p className="md:block hidden">AnimeSensei</p>
+          <p className="md:block hidden">AnimXer</p>
           <img
             src="/logo.png"
             alt="nav-logo"
