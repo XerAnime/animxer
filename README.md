@@ -1,3 +1,6 @@
+h1 align="center"><a href="https://animxer.fun"><img src="https://cdn.jsdelivr.net/gh/XerAnime/Logo@main/logo.jpg"></a></h1>
+<h2 align="center"><a href="https://animxer.fun"><b>Watch Animes Online For Free</b></a></h4>
+
 
 # Deploy-On
 vercel
