@@ -6,9 +6,7 @@ import PopularAnimes from "./../Components/PopularAnimes";
 import ErrorPage from "./../Components/ErrorPage";
 
 const page = async ({ params }) => {
-  const anime = await makeRequest(`/info/${params?.id}`, {
-    next: { revalidate: 3600 },
-  });
+  const anime = await makeRequest(`/info/${params?.id}`, { cache: "no-store" });
   const popular = await getTopAnimes();
   return anime?.id !== undefined ? (
     <div className="color-text my-5 mx-0 grid max-w-screen-2xl grid-cols-1 gap-2 md:mx-auto md:gap-5 md:px-16 md:py-16 lg:grid-cols-[70%,30%]">
