@@ -1,6 +1,7 @@
 // Import necessary modules and components
 "use client";
 import Link from "next/link";
+import { genres } from "@/API/genres";
 import { useEffect, useRef } from "react";
 
 const AnimeCarousel = ({ animes }) => {
@@ -108,7 +109,7 @@ const AnimeCarousel = ({ animes }) => {
                       return (
                         <Link
                           key={index}
-                          href="#"
+                          href={`/filter/${genres[tag]}`}
                           className="mr-1 hover:text-purple-500"
                         >
                           {tag}
@@ -137,7 +138,7 @@ const AnimeCarousel = ({ animes }) => {
             </div>
             <Link href={`/${anime?.id}`} className="pr-3 md:pr-0">
               <img
-                className="relative z-10 aspect-auto rounded hover:scale-[1.03] md:w-full"
+                className="relative z-10 aspect-auto rounded hover:scale-[1.03] md:w-full w-11/12"
                 src={anime?.image}
                 alt="anime-link"
               />
