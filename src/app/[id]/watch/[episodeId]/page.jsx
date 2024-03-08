@@ -4,7 +4,7 @@ import { makeRequest } from "./../../../../API/request";
 import Stream from "@/app/Components/Stream";
 
 const page = async ({ params }) => {
-  const anime = await makeRequest(`/info/${params?.id}`, { revalidate: 60 });
+  const anime = await makeRequest(`/info/${params?.id}`, { cache: "no-store" });
   const currentEpisode = anime?.episodes?.filter(
     (each) => each.id === params.episodeId
   );
