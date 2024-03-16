@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { genres } from "@/API/genres";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const AnimeCarousel = ({ animes }) => {
   // Define background colors based on content type
@@ -71,7 +72,9 @@ const AnimeCarousel = ({ animes }) => {
             key={index}
             className="grid h-full w-full flex-shrink-0 snap-start grid-cols-[65%,35%] items-center gap-1 px-2 backdrop-blur-sm backdrop-brightness-50 transition-all md:grid-cols-[75%,25%] md:px-5"
           >
-            <img
+            <Image
+              height={750}
+              width={600}
               src={anime?.image}
               alt="background"
               className="absolute top-0 z-0 h-auto w-full bg-no-repeat object-contain object-center brightness-[.3]"
@@ -137,7 +140,9 @@ const AnimeCarousel = ({ animes }) => {
               </div>
             </div>
             <Link href={`/${anime?.id}`} className="pr-3 md:pr-0">
-              <img
+              <Image
+                height={750}
+                width={600}
                 className="relative z-10 aspect-auto rounded hover:scale-[1.03] md:w-full w-11/12"
                 src={anime?.image}
                 alt="anime-link"

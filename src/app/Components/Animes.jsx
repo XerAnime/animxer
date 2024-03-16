@@ -3,6 +3,7 @@ import { makeRequest } from "@/API/request";
 import { revalidateTag } from "next/cache";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export const Animes = ({ filter, search, recents, typeFilter }) => {
   const [animes, setAnimes] = useState([]);
@@ -13,7 +14,6 @@ export const Animes = ({ filter, search, recents, typeFilter }) => {
   useEffect(() => {
     setAnimes([]);
     setLoading(true);
-    // Make Request
     makeRequest(
       `${
         search
@@ -34,7 +34,6 @@ export const Animes = ({ filter, search, recents, typeFilter }) => {
       setLoading(false);
     });
 
-    // Scrolls When User Changes Mode
     window.scrollTo({
       top: 0,
       behavior: "smooth", // Optional: adds a smooth scrolling animation
@@ -133,10 +132,13 @@ export const Animes = ({ filter, search, recents, typeFilter }) => {
                   href={`/${anime?.id}`}
                   className="group"
                 >
-                  <img
+                  <Image
                     className="z-10 mx-auto aspect-[1/1.4] max-h-32 md:min-h-52 min-h-60 rounded object-cover"
                     src={anime?.image}
                     alt={anime?.title}
+                    height={600}
+                    width={750}
+                    priority
                   />
                   <p
                     className="my-1 h-5 overflow-hidden text-center text-sm group-hover:text-purple-500 md:text-base"

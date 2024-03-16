@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { makeRequest } from "@/API/request";
+import Image from "next/image";
 
 const FeaturedAnime = () => {
   const [featured, setFeatured] = useState(null);
@@ -43,7 +44,9 @@ const FeaturedAnime = () => {
       href={`/${featured?.id}`}
       className="group relative hidden overflow-hidden md:block"
     >
-      <img
+      <Image
+        width={400}
+        height={600}
         className="absolute h-[250px] w-full rounded-r-md object-cover object-center brightness-90"
         src={featured?.image}
       />

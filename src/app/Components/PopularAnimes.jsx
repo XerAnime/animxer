@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -49,7 +50,9 @@ const PopularAnimes = ({ animes }) => {
                 <p className="rotate-45">{index + 1}</p>
               </div>
               <Link key={index} href={`/${anime?.id}`}>
-                <img
+                <Image
+                  height={550}
+                  width={400}
                   className="absolute w-full top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded brightness-50"
                   src={anime?.image}
                 />

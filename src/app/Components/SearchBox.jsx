@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { makeRequest } from "@/API/request";
 import Link from "next/link";
+import Image from "next/image";
 let searchTimeout;
 
 const SearchBox = () => {
@@ -26,7 +27,7 @@ const SearchBox = () => {
       } else {
         setSearchedAnimes([]);
       }
-    }, 500);
+    }, 300);
   };
 
   useEffect(() => {
@@ -83,7 +84,9 @@ const SearchBox = () => {
             }}
             className="flex items-center border-b border-[#fff3] text-left text-sm md:text-base"
           >
-            <img
+            <Image
+              height={600}
+              width={500}
               src={anime?.image}
               alt={anime?.title}
               className="w-16 md:w-20 h-auto p-2 rounded-md"

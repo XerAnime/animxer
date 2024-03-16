@@ -15,21 +15,25 @@ const Stream = ({ episodeId }) => {
   }, [episodeId]);
 
   useEffect(() => {
-    let url = "";
+    let url = "",
+      time = 0;
+    const video = document.querySelector("#video-player");
+
     episode?.sources?.map((source) => {
       if (source.quality === quality) {
+        time = video.currentTime;
         url = source.url;
       }
     });
-
-    const video = document.querySelector("#video-player");
 
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(url);
       hls.attachMedia(video);
+      video.currentTime = time;
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = url;
+      video.currentTime = time;
       video.addEventListener("loadedmetadata", () => {
         video.play();
       });

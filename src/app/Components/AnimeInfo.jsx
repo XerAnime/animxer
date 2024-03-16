@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { genres } from "@/API/genres";
 import BookmarkBtn from "./BookmarkBtn";
+import Image from "next/image";
 
 const AnimeInfo = ({ anime }) => {
   return (
@@ -8,7 +9,9 @@ const AnimeInfo = ({ anime }) => {
       className={`scrollbar pointer-events-auto z-50 flex flex-col overflow-auto rounded-none md:rounded-md bg-[#121212] py-3 md:flex-row background h-max w-full`}
     >
       <div className="flex min-w-52 flex-col items-center gap-2 md:w-56">
-        <img
+        <Image
+          height={900}
+          width={800}
           src={anime?.image}
           alt="anime-cover"
           className="aspect-[1/1.5] w-2/4 rounded md:w-10/12 object-cover"
@@ -60,35 +63,35 @@ const AnimeInfo = ({ anime }) => {
         </div>
         <div className="my-2 flex flex-wrap items-center justify-center gap-1 md:justify-start">
           <Link
-            href="https://www.facebook.com"
+            href="#"
             className="flex min-w-20 items-center gap-2 rounded bg-indigo-700 px-2 py-1 text-xs font-normal tracking-wide text-white hover:scale-105"
           >
             <i className="fa-brands fa-facebook-f"></i>
             Facebook
           </Link>
           <Link
-            href="https://www.twitter.com"
+            href="#"
             className="flex min-w-20 items-center gap-2 rounded bg-blue-500 px-2 py-1 text-xs font-normal tracking-wide text-white hover:scale-105"
           >
             <i className="fa-brands fa-twitter"></i>
             Twitter
           </Link>
           <Link
-            href="https://www.whatsapp.com"
+            href="#"
             className="flex min-w-20 items-center gap-2 rounded bg-green-500 px-2 py-1 text-xs font-normal tracking-wide text-white hover:scale-105"
           >
             <i className="fa-brands fa-whatsapp"></i>
             Whatsapp
           </Link>
           <Link
-            href="https://www.dicord.com"
+            href="#"
             className="flex min-w-20 items-center gap-2 rounded bg-indigo-500 px-2 py-1 text-xs font-normal tracking-wide text-white hover:scale-105"
           >
             <i className="fa-brands fa-discord"></i>
             Discord
           </Link>
           <Link
-            href="https://www.pinterest.com"
+            href="#"
             className="flex min-w-20 items-center gap-2 rounded bg-red-700 px-2 py-1 text-xs font-normal tracking-wide text-white hover:scale-105"
           >
             <i className="fa-brands fa-pinterest"></i>
