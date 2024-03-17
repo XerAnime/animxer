@@ -164,7 +164,12 @@ export const Animes = ({ filter, search, recents, typeFilter }) => {
           )
         ) : (
           <div className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]">
-            Loading...
+            <div className="loader book">
+              <figure className="page"></figure>
+              <figure className="page"></figure>
+              <figure className="page"></figure>
+            </div>
+            <h1 className="loading-txt">Loading</h1>
           </div>
         )}
       </div>
