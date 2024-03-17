@@ -490,6 +490,7 @@ h1.loading-txt {
   text-transform: uppercase;
   font-size: 20px;
   position: relative;
+  color: white;
 }
 
 h1.loading-txt:after {
@@ -596,4 +597,4 @@ h1.loading-txt:after {
   100% {
     content: "...";
   }
-}
+  }
