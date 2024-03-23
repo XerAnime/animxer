@@ -1,6 +1,7 @@
 import { getTopAnimes } from "@/API/request";
 import Animes from "../../Components/Animes";
 import PopularAnimes from "../../Components/PopularAnimes";
+import Filter from "@/app/Components/Filter";
 
 const page = async ({ params }) => {
   const popular = await getTopAnimes();
@@ -10,7 +11,7 @@ const page = async ({ params }) => {
       {/* Left */}
       <div className="flex w-full flex-col gap-5  ">
         {/* Filtering Actions */}
-        <div>asdasd</div>
+        <Filter />
 
         {/* Animes */}
         <Animes key="anime-feed" search={params?.search} />
