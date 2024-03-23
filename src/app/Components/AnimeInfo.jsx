@@ -13,6 +13,7 @@ const AnimeInfo = ({ anime }) => {
           height={900}
           width={800}
           src={anime?.image}
+          quality={50}
           alt="anime-cover"
           className="aspect-[1/1.5] w-2/4 rounded md:w-10/12 object-cover"
         />
