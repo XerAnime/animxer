@@ -9,7 +9,7 @@ let searchTimeout;
 const SearchBox = () => {
   const router = useRouter();
   const [search, setSearch] = useState("");
-  const [searchedAnimes, setSearchedAnimes] = useState([]);
+  const [searchedAnimes, setSearchedAnimes] = useState(false);
 
   const handleOnChange = (event) => {
     const { value } = event.target;
@@ -21,11 +21,13 @@ const SearchBox = () => {
     // Set a new timeout for 2000 milliseconds (2 seconds)
     searchTimeout = setTimeout(() => {
       if (value !== "") {
-        makeRequest(`/${value}`, { cache: "force-cache" }).then((res) =>
-          setSearchedAnimes(res?.results)
-        );
+        makeRequest(`/${value}`, { cache: "force-cache" }).then((res) => {
+          if (res?.results?.length > 0) {
+            setSearchedAnimes(res?.results);
+          } else setSearchedAnimes([]);
+        });
       } else {
-        setSearchedAnimes([]);
+        setSearchedAnimes(false);
       }
     }, 300);
   };
@@ -37,6 +39,11 @@ const SearchBox = () => {
         document.querySelector(".search-btn").click();
       }
     });
+    document.querySelector('.input').addEventListener("blur", () => {
+        if(searchedAnimes.length > 0) {
+          // Do nothing
+        } else setSearchedAnimes(false);
+    })
   }, []);
 
   return (
@@ -74,26 +81,34 @@ const SearchBox = () => {
         </div>
       </div>
       <main className="flex flex-col absolute w-full z-50 bg-[#121212] max-h-60 overflow-y-scroll scrollbar">
-        {searchedAnimes?.map((anime, index) => (
-          <Link
-            key={index}
-            href={`/${anime?.id}`}
-            onClick={() => {
-              setSearch("");
-              setSearchedAnimes([]);
-            }}
-            className="flex items-center border-b border-[#fff3] text-left text-sm md:text-base"
-          >
-            <Image
-              height={600}
-              width={500}
-              src={anime?.image}
-              alt={anime?.title}
-              className="w-16 md:w-20 h-auto p-2 rounded-md"
-            />
-            <p className=" line-clamp-3 pr-3">{anime?.title}</p>
-          </Link>
-        ))}
+        {searchedAnimes?.length > 0 ? (
+          searchedAnimes?.map((anime, index) => (
+            <Link
+              key={index}
+              href={`/${anime?.id}`}
+              onClick={() => {
+                setSearch("");
+                setSearchedAnimes([]);
+              }}
+              className="flex items-center border-b border-[#fff3] text-left text-sm md:text-base"
+            >
+              <Image
+                height={600}
+                width={500}
+                src={anime?.image}
+                alt={anime?.title}
+                className="w-16 md:w-20 h-auto p-2 rounded-md"
+              />
+              <p className=" line-clamp-3 pr-3">{anime?.title}</p>
+            </Link>
+          ))
+        ) : searchedAnimes !== false ? (
+          <p className="text-center font-bold text-white md:text-base text-sm">
+            No Anime Found.
+          </p>
+        ) : (
+          <></>
+        )}
       </main>
     </div>
   );
