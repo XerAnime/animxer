@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "base.css";
+@import "all.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --text: #000;
+  --input-text-color: #0008;
+  --input-text-hover-color: transparent;
+  --input-border-color: #0003;
+  --input-border-hover-color: #0005;
+  --input-bg-color: transparent;
+  --input-icon-color: #000;
+  --search-max-width: 250px;
+  --search-min-width: clamp(150px, 20vw, 250px);
+  --border-radius: 5px;
+  --transition-cubic-bezier: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme {
+  background: #121212;
+  --text: #fff;
+  --input-text-color: #fff8;
+  --input-text-hover-color: transparent;
+  --input-border-color: #fff3;
+  --input-border-hover-color: #fff5;
+  --input-bg-color: transparent;
+  --input-icon-color: #fff;
+  --search-max-width: 250px;
+  --search-min-width: clamp(150px, 20vw, 250px);
+  --border-radius: 5px;
+  --transition-cubic-bezier: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background: #0001;
+}
+
+.color-text {
+  color: var(--text) !important;
+}
+
+.background {
+  background: #fff;
+  box-shadow: 3px 3px 3px #0002;
+}
+
+body.dark-theme .background {
+  background: #fff1;
+  box-shadow: unset;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* width */
+.scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+.scrollbar-md::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track,
+.scrollbar-md::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb,
+.scrollbar-md::-webkit-scrollbar-thumb {
+  background: rgb(168 85 247);
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover,
+.scrollbar-md::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.5);
+}
