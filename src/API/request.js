@@ -19,7 +19,6 @@ export const getTopAnimes = async () => {
     return { top: top.results, popular: popular.results };
 }
 
-
 export const getCarousel = async () => {
     let maxPage = 6;
     const carousel = [], indexes = [];
