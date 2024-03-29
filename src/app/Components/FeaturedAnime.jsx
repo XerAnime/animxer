@@ -9,7 +9,7 @@ const FeaturedAnime = () => {
 
   useEffect(() => {
     const getFeaturedAnime = async () => {
-      const storedFeatured = localStorage.getItem("featured");
+      const storedFeatured = localStorage.getItem("featuredAnime");
       if (storedFeatured) {
         const { anime, date } = JSON.parse(storedFeatured);
         const storedDate = new Date(date);
@@ -32,7 +32,7 @@ const FeaturedAnime = () => {
         date: new Date().toISOString().split("T")[0],
       };
 
-      localStorage.setItem("featured", JSON.stringify(newFeaturedWithDate));
+      localStorage.setItem("featuredAnime", JSON.stringify(newFeaturedWithDate));
       setFeatured(req?.results[randomIndex]);
     };
 
@@ -44,7 +44,7 @@ const FeaturedAnime = () => {
       href={`/${featured?.id}`}
       className="group relative hidden overflow-hidden md:block"
     >
-      <Image
+      <img
         width={400}
         height={600}
         className="absolute h-[250px] w-full rounded-r-md object-cover object-center brightness-90"
