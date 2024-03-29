@@ -132,7 +132,7 @@ export const Animes = ({ filter, search, recents, typeFilter }) => {
                   href={`/${anime?.id}`}
                   className="group"
                 >
-                  <Image
+                  <img
                     className="z-10 mx-auto aspect-[1/1.4] max-h-32 md:min-h-52 min-h-60 rounded object-cover"
                     src={anime?.image}
                     alt={anime?.title}
