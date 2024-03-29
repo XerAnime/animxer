@@ -92,7 +92,7 @@ const SearchBox = () => {
               }}
               className="flex items-center border-b border-[#fff3] text-left text-sm md:text-base"
             >
-              <Image
+              <img
                 height={600}
                 width={500}
                 src={anime?.image}
