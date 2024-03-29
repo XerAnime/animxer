@@ -50,7 +50,7 @@ const PopularAnimes = ({ animes }) => {
                 <p className="rotate-45">{index + 1}</p>
               </div>
               <Link key={index} href={`/${anime?.id}`}>
-                <Image
+                <img
                   height={550}
                   width={400}
                   className="absolute w-full top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded brightness-50"
