@@ -1,4 +1,4 @@
-const baseUrl = "https://consumet-api-4ucr.onrender.com/anime/gogoanime";
+const baseUrl = "https://consumet-api-1m6y.onrender.com/anime/gogoanime";
 
 export const makeRequest = async (endpoint, config) => {
     const url = `${baseUrl}${endpoint}`;
